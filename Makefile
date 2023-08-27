@@ -27,6 +27,8 @@ pull:
 	git fetch
 	git pull
 
+sync: pull push
+
 files := file1 file2
 some_file:
 	echo "Look at this variable: " $(files)
