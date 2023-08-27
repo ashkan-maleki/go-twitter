@@ -13,13 +13,9 @@ env-setup:
 # Git commands
 #===============================
 
-# Linux
+# In Windows, you should use git bash to run this command.
 COMMIT_MESSAGE ?= $(shell bash -c 'read -p "Commit Message: " COMMIT_MESSAGE; echo $$COMMIT_MESSAGE')
-# Windows
-#COMMIT_MESSAGE ?= $(Invoke-Expression -Command "$COMMIT_MESSAGE = Read-Host 'Commit Message'; echo $COMMIT_MESSAGE")
-#COMMIT_MESSAGE ?= "$COMMIT_MESSAGE = Read-Host 'Commit Message'; echo $COMMIT_MESSAGE"
 
-#@echo Commit Message › $(COMMIT_MESSAGE)
 commit:
 	git add .
 	git commit -m "$(COMMIT_MESSAGE)"
