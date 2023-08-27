@@ -1,4 +1,3 @@
-SHELL=/bin/bash
 all: run
 
 #===============================
@@ -29,12 +28,6 @@ pull:
 
 sync: pull push
 
-files := file1 file2
-some_file:
-	echo "Look at this variable: " $(files)
-
-file1:
-	touch file1
 
 #USERNAME ?= $(shell bash -c 'read -p "Username: " username; echo $$username')
 #PASSWORD ?= $(shell bash -c 'read -s -p "Password: " pwd; echo $$pwd')
