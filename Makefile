@@ -71,8 +71,10 @@ pyenv-deactivate:
 #===============================
 # Feed
 #===============================
-run:
-	python manage.py runserver 127.0.0.1:8000 --settings=weblog.settings
+run: run-feed
+
+run-feed:
+	go run feed/cmd/service/main.go
 
 #===============================
 # Project django

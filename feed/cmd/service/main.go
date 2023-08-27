@@ -1,7 +1,7 @@
 package main
 
 import (
-	fiber "github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2"
 	"log"
 )
 
