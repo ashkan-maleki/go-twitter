@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 all: run
 
 #===============================
@@ -12,7 +13,11 @@ env-setup:
 # Git commands
 #===============================
 
+# Linux
 COMMIT_MESSAGE ?= $(shell bash -c 'read -p "Commit Message: " COMMIT_MESSAGE; echo $$COMMIT_MESSAGE')
+# Windows
+#COMMIT_MESSAGE ?= $(Invoke-Expression -Command "$COMMIT_MESSAGE = Read-Host 'Commit Message'; echo $COMMIT_MESSAGE")
+#COMMIT_MESSAGE ?= "$COMMIT_MESSAGE = Read-Host 'Commit Message'; echo $COMMIT_MESSAGE"
 
 #@echo Commit Message › $(COMMIT_MESSAGE)
 commit:
@@ -25,6 +30,13 @@ push: commit
 pull:
 	git fetch
 	git pull
+
+files := file1 file2
+some_file:
+	echo "Look at this variable: " $(files)
+
+file1:
+	touch file1
 
 #USERNAME ?= $(shell bash -c 'read -p "Username: " username; echo $$username')
 #PASSWORD ?= $(shell bash -c 'read -s -p "Password: " pwd; echo $$pwd')
@@ -66,8 +78,8 @@ pyenv-deactivate:
 #===============================
 # Project run
 #===============================
-
-
+# Feed
+#===============================
 run:
 	python manage.py runserver 127.0.0.1:8000 --settings=weblog.settings
 
